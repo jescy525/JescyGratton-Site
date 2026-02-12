@@ -1,0 +1,522 @@
+/* ============================================
+   ANIMATIONS.CSS - Scroll Reveals & Transitions
+   Site Portfolio Jescy Gratton
+   ============================================ */
+
+/* ----------------------------------------
+   SCROLL REVEAL SYSTEM
+   Utilise .reveal + .reveal--visible (ajouté par JS)
+   ---------------------------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variantes de direction */
+.reveal--left {
+    transform: translateX(-40px);
+}
+
+.reveal--left.reveal--visible {
+    transform: translateX(0);
+}
+
+.reveal--right {
+    transform: translateX(40px);
+}
+
+.reveal--right.reveal--visible {
+    transform: translateX(0);
+}
+
+.reveal--scale {
+    transform: scale(0.9);
+}
+
+.reveal--scale.reveal--visible {
+    transform: scale(1);
+}
+
+/* Délais staggered (utilisés via data-delay dans le HTML) */
+.reveal[data-delay="100"] {
+    transition-delay: 100ms;
+}
+
+.reveal[data-delay="200"] {
+    transition-delay: 200ms;
+}
+
+.reveal[data-delay="300"] {
+    transition-delay: 300ms;
+}
+
+.reveal[data-delay="400"] {
+    transition-delay: 400ms;
+}
+
+.reveal[data-delay="500"] {
+    transition-delay: 500ms;
+}
+
+
+/* ----------------------------------------
+   HERO ANIMATIONS
+   ---------------------------------------- */
+
+/* Entrée initiale hero (au chargement) */
+.hero-text {
+    animation: heroFadeIn 0.9s ease forwards;
+}
+
+.hero-image {
+    animation: heroFadeIn 0.9s ease 0.2s forwards;
+    opacity: 0;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Badge entrée */
+.hero-badge {
+    animation: badgeSlide 0.6s ease 0.5s forwards;
+    opacity: 0;
+}
+
+@keyframes badgeSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Glow pulsation photo */
+.hero-photo-glow {
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+/* Indicateur scroll bounce (défini dans style.css, renforcé ici) */
+.hero-scroll-indicator {
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* ----------------------------------------
+   HOVER EFFECTS - CARDS
+   ---------------------------------------- */
+
+/* Service cards lift */
+.service-card {
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Portfolio items */
+.portfolio-card {
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Stat items */
+.stat-item {
+    transition: transform var(--transition-base);
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+}
+
+/* About values */
+.value-item {
+    transition: transform var(--transition-base),
+                background var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.value-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Contact method cards */
+.contact-link {
+    transition: transform var(--transition-base),
+                background var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.contact-link:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ----------------------------------------
+   HOVER EFFECTS - BUTTONS
+   ---------------------------------------- */
+
+.btn-primary {
+    transition: transform var(--transition-fast),
+                box-shadow var(--transition-fast),
+                background var(--transition-fast);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    transition: transform var(--transition-fast),
+                background var(--transition-fast),
+                border-color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    transition: transform var(--transition-fast),
+                background var(--transition-fast),
+                color var(--transition-fast),
+                border-color var(--transition-fast);
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ----------------------------------------
+   HOVER EFFECTS - LINKS & ICONS
+   ---------------------------------------- */
+
+/* Nav links underline */
+.nav-link {
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width var(--transition-base), left var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Social icons */
+.social-link {
+    transition: color var(--transition-fast),
+                transform var(--transition-fast),
+                background var(--transition-fast);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+/* Footer social */
+.footer-social .social-link:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+
+/* ----------------------------------------
+   NAVBAR TRANSITION
+   ---------------------------------------- */
+
+.navbar {
+    transition: background var(--transition-base),
+                box-shadow var(--transition-base),
+                backdrop-filter var(--transition-base);
+}
+
+
+/* ----------------------------------------
+   FORM ANIMATIONS
+   ---------------------------------------- */
+
+/* Focus glow */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition: border-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+/* Submit button loading spinner */
+.btn.is-loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: btnSpin 0.6s linear infinite;
+}
+
+@keyframes btnSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success message fade in */
+.form-success {
+    animation: successFade 0.5s ease forwards;
+}
+
+@keyframes successFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ----------------------------------------
+   TESTIMONIAL CAROUSEL
+   ---------------------------------------- */
+
+.testimonial-card {
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-card--active {
+    animation: testimonialFadeIn 0.5s ease;
+}
+
+@keyframes testimonialFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Dot active pulse */
+.dot--active {
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+    50% {
+        box-shadow: 0 0 0 6px transparent;
+    }
+}
+
+
+/* ----------------------------------------
+   COUNTERS ANIMATION
+   ---------------------------------------- */
+
+.stat-number {
+    transition: color var(--transition-base);
+}
+
+/* Flash quand le compteur finit */
+.stat-number.counted {
+    animation: counterFlash 0.4s ease;
+}
+
+@keyframes counterFlash {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ----------------------------------------
+   SECTION SEPARATORS ANIMATED
+   ---------------------------------------- */
+
+.section-header::after {
+    transition: width 0.8s ease;
+    width: 0;
+}
+
+.reveal--visible .section-header::after,
+.section-header.animated::after {
+    width: 60px;
+}
+
+
+/* ----------------------------------------
+   IMAGE LOAD TRANSITION
+   ---------------------------------------- */
+
+.hero-photo,
+.about-photo {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-photo[src=""],
+.about-photo[src=""] {
+    opacity: 0;
+}
+
+
+/* ----------------------------------------
+   HAMBURGER ANIMATION
+   ---------------------------------------- */
+
+.nav-toggle span {
+    transition: transform var(--transition-base),
+                opacity var(--transition-fast);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ----------------------------------------
+   GRADIENT TEXT SHIMMER (optionnel)
+   ---------------------------------------- */
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-title .gradient-text {
+    background-size: 200% auto;
+    animation: gradientShift 6s ease infinite;
+}
+
+
+/* ----------------------------------------
+   REDUCED MOTION - Override tout
+   ---------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .hero-text,
+    .hero-image,
+    .hero-badge {
+        animation: none;
+        opacity: 1;
+    }
+
+    .hero-photo-glow {
+        animation: none;
+    }
+
+    .hero-scroll-indicator {
+        animation: none;
+    }
+
+    .dot--active {
+        animation: none;
+    }
+
+    .hero-title .gradient-text {
+        animation: none;
+    }
+}
