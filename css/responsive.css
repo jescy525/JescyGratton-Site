@@ -125,18 +125,70 @@
     font-size: 2rem;
 }
 
-/* -- Portfolio -- */
-.portfolio-comparison {
+/* -- Portfolio Blocks -- */
+.portfolio-block-header {
+    padding: 16px 20px;
+}
+
+.portfolio-block-intro {
+    padding: 16px 20px 0;
+}
+
+.portfolio-block .showcase-grid {
+    padding: 16px 20px 20px;
+}
+
+.portfolio-result {
+    padding: 14px 20px;
+}
+
+/* Email mockup mobile */
+.email-mockup {
+    margin: 16px 20px 20px;
+}
+
+.email-mockup-body {
+    padding: 16px 12px;
+    font-size: 0.85rem;
+}
+
+.email-mockup-field {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+}
+
+/* Product mockup mobile */
+.product-mockup {
+    margin: 16px 20px 20px;
+    padding: 20px;
+}
+
+.product-mockup-title {
+    font-size: 1.2rem;
+}
+
+.product-price-current {
+    font-size: 1.5rem;
+}
+
+.product-mockup-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.product-btn {
+    text-align: center;
+}
+
+/* -- Showcase mobile -- */
+.showcase-grid {
     grid-template-columns: 1fr;
     gap: 16px;
 }
 
-.portfolio-arrow {
-    transform: rotate(90deg);
-}
-
-.portfolio-card {
-    padding: 20px;
+.showcase-item img {
+    height: 280px;
 }
 
 /* -- Stats -- */
@@ -304,14 +356,45 @@
         justify-self: center;
     }
 
-    /* Portfolio */
-    .portfolio-comparison {
-        grid-template-columns: 1fr auto 1fr;
+    /* Portfolio blocks tablet */
+    .portfolio-block-header {
+        padding: 20px 28px;
+    }
+
+    .portfolio-block-intro {
+        padding: 20px 28px 0;
+    }
+
+    .portfolio-block .showcase-grid {
+        padding: 20px 28px 28px;
+    }
+
+    .email-mockup {
+        margin: 20px 28px 28px;
+    }
+
+    .email-mockup-field {
+        flex-wrap: nowrap;
+    }
+
+    .product-mockup {
+        margin: 20px 28px 28px;
+        padding: 28px;
+    }
+
+    .product-mockup-cta {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* Showcase tablet */
+    .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
-    .portfolio-arrow {
-        transform: rotate(0deg);
+    .showcase-item img {
+        height: 300px;
     }
 
     /* Stats */
@@ -423,6 +506,16 @@
         grid-column: auto;
         max-width: none;
         justify-self: auto;
+    }
+
+    /* Showcase desktop - 3 colonnes */
+    .showcase-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .showcase-item img {
+        height: 340px;
     }
 
     /* Stats - 4 colonnes */

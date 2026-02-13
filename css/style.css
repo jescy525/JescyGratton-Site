@@ -743,13 +743,14 @@ button {
     padding: var(--section-padding) 0;
 }
 
+/* -- Portfolio Blocks (Restaurant / Email / E-Commerce) -- */
 .portfolio-grid {
     display: grid;
-    gap: 32px;
+    gap: 48px;
     margin-bottom: 48px;
 }
 
-.portfolio-card {
+.portfolio-block {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -757,12 +758,12 @@ button {
     transition: all var(--transition-base);
 }
 
-.portfolio-card:hover {
+.portfolio-block:hover {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-md);
 }
 
-.portfolio-card-header {
+.portfolio-block-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -784,74 +785,15 @@ button {
     color: var(--text-muted);
 }
 
-.portfolio-comparison {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: stretch;
-    gap: 0;
-}
-
-.portfolio-before,
-.portfolio-after {
-    padding: 24px 28px;
-}
-
-.portfolio-before {
-    background: rgba(239, 68, 68, 0.03);
-}
-
-.portfolio-after {
-    background: rgba(34, 197, 94, 0.03);
-}
-
-.comparison-label {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 4px 10px;
-    border-radius: var(--radius-full);
-    margin-bottom: 12px;
-}
-
-.comparison-label--before {
-    background: rgba(239, 68, 68, 0.1);
-    color: #f87171;
-}
-
-.comparison-label--after {
-    background: rgba(34, 197, 94, 0.1);
-    color: #4ade80;
-}
-
-.comparison-content {
-    font-size: 0.9rem;
-    line-height: 1.7;
+.portfolio-block-intro {
+    padding: 20px 28px 0;
+    font-size: 0.92rem;
     color: var(--text-secondary);
+    line-height: 1.6;
 }
 
-.comparison-content p {
-    margin-bottom: 8px;
-}
-
-.comparison-content p:last-child {
-    margin-bottom: 0;
-}
-
-.comparison-content strong {
-    color: var(--text-primary);
-}
-
-.portfolio-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 8px;
-    color: var(--accent);
-    background: var(--bg-card);
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
+.portfolio-block .showcase-grid {
+    padding: 20px 28px 28px;
 }
 
 .portfolio-result {
@@ -871,6 +813,216 @@ button {
     color: var(--success);
 }
 
+/* -- Email Mockup (B2B block) -- */
+.email-mockup {
+    margin: 20px 28px 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+.email-mockup-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.email-mockup-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.email-mockup-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.email-mockup-dots span:nth-child(1) { background: #ef4444; }
+.email-mockup-dots span:nth-child(2) { background: #eab308; }
+.email-mockup-dots span:nth-child(3) { background: #22c55e; }
+
+.email-mockup-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.email-mockup-field {
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.email-field-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 50px;
+    flex-shrink: 0;
+}
+
+.email-subject {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.email-mockup-body {
+    padding: 20px 16px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.email-mockup-body p {
+    margin-bottom: 12px;
+}
+
+.email-mockup-body p:last-child {
+    margin-bottom: 0;
+}
+
+.email-mockup-body strong {
+    color: var(--accent-light);
+}
+
+.email-signature {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* -- Product Mockup (E-Commerce block) -- */
+.product-mockup {
+    margin: 20px 28px 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-primary);
+    padding: 28px;
+    position: relative;
+}
+
+.product-mockup-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+}
+
+.product-mockup-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.product-mockup-tagline {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.product-mockup-price {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.product-price-current {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-light);
+}
+
+.product-price-old {
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.product-mockup-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.product-mockup-description p {
+    margin-bottom: 12px;
+}
+
+.product-mockup-description ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.product-mockup-description ul li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.88rem;
+}
+
+.product-mockup-description ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: 700;
+}
+
+.product-mockup-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.product-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg-primary);
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 12px 28px;
+    border-radius: var(--radius-md);
+    cursor: default;
+    transition: all var(--transition-base);
+}
+
+.product-btn:hover {
+    background: var(--accent-dark);
+}
+
+.product-stock {
+    font-size: 0.8rem;
+    color: var(--success);
+    font-weight: 500;
+}
+
 .portfolio-cta {
     text-align: center;
     padding: 32px;
@@ -882,6 +1034,50 @@ button {
 .portfolio-cta p {
     color: var(--text-secondary);
     margin-bottom: 20px;
+}
+
+/* -- Showcase Grid (inside portfolio blocks) -- */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.showcase-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: all var(--transition-base);
+}
+
+.showcase-item:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.03);
+}
+
+.showcase-caption {
+    display: block;
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border);
 }
 
 /* ─────────────── STATS ─────────────── */
