@@ -125,6 +125,19 @@
     font-size: 2rem;
 }
 
+/* -- Pricing options mobile -- */
+.pricing-option .price-amount {
+    font-size: 1.5rem;
+}
+
+.pricing-option--alt .price-amount {
+    font-size: 1rem;
+}
+
+.pricing-label {
+    min-width: 90px;
+}
+
 /* -- Portfolio Blocks -- */
 .portfolio-block-header {
     padding: 16px 20px;
@@ -134,12 +147,44 @@
     padding: 16px 20px 0;
 }
 
-.portfolio-block .showcase-grid {
+.portfolio-result {
+    padding: 14px 20px;
+}
+
+/* -- Email sequence mobile -- */
+.email-sequence {
     padding: 16px 20px 20px;
 }
 
-.portfolio-result {
-    padding: 14px 20px;
+.email-step-marker {
+    width: 28px;
+}
+
+.email-step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+}
+
+.email-ab-variants {
+    padding: 8px 12px;
+}
+
+.email-ab-variant {
+    font-size: 0.72rem;
+}
+
+/* -- Product showcase mobile -- */
+.product-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px 20px 20px;
+}
+
+/* -- Blog mobile -- */
+.blog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
 }
 
 /* Social posts mobile */
@@ -425,14 +470,31 @@
         height: 6px;
     }
 
-    /* Showcase tablet */
-    .showcase-grid {
+    /* Blog tablet - 2 colonnes */
+    .blog-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
-    .showcase-item img {
-        height: 300px;
+    /* Product showcase tablet */
+    .product-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    /* Email sequence tablet */
+    .email-sequence {
+        padding: 20px 28px 28px;
+    }
+
+    .email-step-marker {
+        width: 36px;
+    }
+
+    .email-step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
     }
 
     /* Stats */
@@ -552,14 +614,15 @@
         gap: 24px;
     }
 
-    /* Showcase desktop - 3 colonnes */
-    .showcase-grid {
+    /* Blog desktop - 3 colonnes */
+    .blog-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
     }
 
-    .showcase-item img {
-        height: 340px;
+    /* Hero new badge desktop */
+    .hero-new-badge {
+        margin-bottom: 20px;
     }
 
     /* Stats - 4 colonnes */

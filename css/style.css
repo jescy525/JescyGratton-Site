@@ -687,19 +687,49 @@ button {
     margin-top: 8px;
 }
 
-.service-price {
+/* -- Service Pricing Options -- */
+.service-pricing-options {
     margin-bottom: 20px;
     padding: 16px 0;
     border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.price-from {
-    display: block;
+.pricing-option {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pricing-label {
     font-size: 0.78rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 4px;
+    min-width: 110px;
+}
+
+.pricing-option .price-amount {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.pricing-option .price-period {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.pricing-option--alt .price-amount {
+    font-size: 1.2rem;
 }
 
 .price-amount {
@@ -1202,6 +1232,255 @@ button {
 .portfolio-cta p {
     color: var(--text-secondary);
     margin-bottom: 20px;
+}
+
+/* -- Email Sequence Timeline -- */
+.email-sequence {
+    padding: 20px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.email-sequence-step {
+    display: flex;
+    gap: 20px;
+}
+
+.email-step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 36px;
+}
+
+.email-step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.email-step-line {
+    width: 2px;
+    flex-grow: 1;
+    background: linear-gradient(to bottom, var(--accent), var(--border));
+    min-height: 20px;
+}
+
+.email-step-content {
+    flex-grow: 1;
+    padding-bottom: 20px;
+}
+
+.email-step-label {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.email-ab-variants {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.email-ab-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    padding: 2px 8px;
+    background: var(--accent-subtle);
+    border-radius: var(--radius-full);
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 4px;
+}
+
+.email-ab-variant {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    padding-left: 12px;
+    border-left: 2px solid var(--border);
+}
+
+/* -- Product Showcase Grid -- */
+.product-showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px 28px 28px;
+}
+
+.product-mockup--featured {
+    grid-column: 1 / -1;
+}
+
+.product-seo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+}
+
+.product-seo-tag {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    background: var(--accent-subtle);
+    border: 1px solid rgba(15, 150, 156, 0.15);
+    border-radius: var(--radius-full);
+    color: var(--accent-light);
+    font-weight: 500;
+}
+
+/* ─────────────── BLOG / ASTUCES ─────────────── */
+.blog {
+    padding: var(--section-padding) 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.blog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.blog-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-base);
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.blog-card-tag {
+    display: inline-block;
+    width: fit-content;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    background: var(--accent-subtle);
+    border: 1px solid rgba(15, 150, 156, 0.15);
+    border-radius: var(--radius-full);
+    color: var(--accent-light);
+    margin-bottom: 16px;
+}
+
+.blog-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.blog-card-excerpt {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.blog-card-cta {
+    font-weight: 600;
+    color: var(--accent-light);
+    transition: color var(--transition-fast);
+}
+
+.blog-card-cta:hover {
+    color: var(--accent);
+}
+
+/* ─────────────── HERO NEW BADGE ─────────────── */
+.hero-new-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, rgba(15, 150, 156, 0.15), rgba(15, 150, 156, 0.05));
+    border: 1px solid rgba(15, 150, 156, 0.3);
+    border-radius: var(--radius-full);
+    margin-bottom: 16px;
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+.hero-new-badge a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    transition: color var(--transition-fast);
+}
+
+.hero-new-badge a:hover {
+    color: #fff;
+}
+
+.hero-new-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        border-color: rgba(15, 150, 156, 0.3);
+        box-shadow: 0 0 0 0 transparent;
+    }
+    50% {
+        border-color: rgba(15, 150, 156, 0.5);
+        box-shadow: 0 0 20px rgba(15, 150, 156, 0.1);
+    }
 }
 
 /* ─────────────── STATS ─────────────── */
