@@ -142,6 +142,16 @@
     padding: 14px 20px;
 }
 
+/* Social posts mobile */
+.social-posts-grid {
+    gap: 20px;
+    padding: 16px 20px 20px;
+}
+
+.social-post-caption {
+    font-size: 0.82rem;
+}
+
 /* Email mockup mobile */
 .email-mockup {
     margin: 16px 20px 20px;
@@ -387,6 +397,17 @@
         align-items: center;
     }
 
+    /* Social posts tablet - 2 colonnes */
+    .social-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 28px 28px;
+    }
+
+    .social-post-caption {
+        font-size: 0.85rem;
+    }
+
     /* Showcase tablet */
     .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -506,6 +527,12 @@
         grid-column: auto;
         max-width: none;
         justify-self: auto;
+    }
+
+    /* Social posts desktop - 3 colonnes */
+    .social-posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
     }
 
     /* Showcase desktop - 3 colonnes */
