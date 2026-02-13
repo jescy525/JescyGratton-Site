@@ -1,0 +1,166 @@
+/* ============================================
+   404.CSS - Page d'erreur 404
+   Styles extraits du HTML inline pour CSP strict
+   ============================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0a0a14;
+    color: #f0f0f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Subtle background grid */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(15, 150, 156, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(15, 150, 156, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 24px;
+    max-width: 600px;
+}
+
+/* Animated 404 */
+.error-code {
+    font-size: clamp(8rem, 20vw, 14rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #0f969c 0%, #6edcd9 40%, #0f969c 60%, #0a7075 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 6s ease-in-out infinite;
+    position: relative;
+    user-select: none;
+}
+
+.error-code::after {
+    content: '404';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f969c, #6edcd9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(40px);
+    opacity: 0.4;
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0f969c, transparent);
+    border-radius: 2px;
+    margin: 24px auto 28px;
+}
+
+.message {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 600;
+    color: #f0f0f5;
+    margin-bottom: 12px;
+}
+
+.sub-message {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #a0a0b8;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #0f969c, #0a7075);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: all 300ms ease;
+    box-shadow: 0 0 30px rgba(15, 150, 156, 0.25);
+    letter-spacing: 0.01em;
+}
+
+.home-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(15, 150, 156, 0.4);
+    background: linear-gradient(135deg, #12b0b7, #0f969c);
+}
+
+.home-link:active {
+    transform: translateY(0);
+}
+
+.home-link svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 300ms ease;
+}
+
+.home-link:hover svg {
+    transform: translateX(-3px);
+}
+
+.footer-text {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #6b6b82;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+}
+
+.footer-text a {
+    color: #0f969c;
+    text-decoration: none;
+    transition: color 300ms ease;
+}
+
+.footer-text a:hover {
+    color: #6edcd9;
+}
