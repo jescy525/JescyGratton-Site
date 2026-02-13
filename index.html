@@ -45,7 +45,6 @@
       "name": "Jescy Gratton - Marketing Digital",
       "description": "Expert en prompt engineering IA à Repentigny. Contenu marketing ultra-efficace pour restos, comptables et e-commerces de Montréal et alentours.",
       "url": "https://www.jescygratton.com",
-      "email": "jescygratton@hotmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Montréal",
@@ -61,28 +60,6 @@
     }
     </script>
 
-    <!-- Skip-to-content CSS -->
-    <style>
-    .skip-to-content {
-        position: absolute;
-        top: -100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--accent, #0f969c);
-        color: #fff;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0 0 0.5rem 0.5rem;
-        font-weight: 600;
-        z-index: 10000;
-        text-decoration: none;
-        transition: top 0.2s ease;
-    }
-    .skip-to-content:focus {
-        top: 0;
-        outline: 2px solid #fff;
-        outline-offset: 2px;
-    }
-    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Passer au contenu principal</a>
@@ -734,6 +711,12 @@
                             </button>
                         </form>
 
+                        <div class="form-error" id="formError" hidden>
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <h3>Oups ! Une erreur est survenue.</h3>
+                            <p>Envoyez-moi un email directement : <a href="#" class="email-link" data-user="jescygratton" data-domain="hotmail.com"><span class="email-value">chargement...</span></a></p>
+                        </div>
+
                         <div class="form-success" id="formSuccess" hidden>
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             <h3>Message envoyé !</h3>
@@ -745,13 +728,13 @@
                         <div class="contact-info-card">
                             <h3 class="contact-info-title">Ou contacte-moi directement</h3>
 
-                            <a href="mailto:jescygratton@hotmail.com" class="contact-link">
+                            <a href="#" class="contact-link email-link" data-user="jescygratton" data-domain="hotmail.com">
                                 <div class="contact-link-icon">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                                 </div>
                                 <div>
                                     <span class="contact-link-label">Email</span>
-                                    <span class="contact-link-value">jescygratton@hotmail.com</span>
+                                    <span class="contact-link-value email-value">Chargement...</span>
                                 </div>
                             </a>
 
@@ -834,7 +817,7 @@
                     <a href="https://www.facebook.com/share/1GSyaU4Q1B/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
-                    <a href="mailto:jescygratton@hotmail.com" aria-label="Email">
+                    <a href="#" class="email-link" data-user="jescygratton" data-domain="hotmail.com" aria-label="Email">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </a>
                 </div>

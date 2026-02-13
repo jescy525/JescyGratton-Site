@@ -18,6 +18,7 @@
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     const testimonialDots = document.querySelectorAll('.dot[data-index]');
 
@@ -33,7 +34,6 @@
         }
     }
 
-    window.addEventListener('scroll', handleNavScroll, { passive: true });
     handleNavScroll(); // état initial
 
     /* ----------------------------------------
@@ -116,7 +116,18 @@
         });
     }
 
-    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    /* Throttled scroll: combine nav scroll + active link via rAF */
+    var scrollTicking = false;
+    window.addEventListener('scroll', function () {
+        if (!scrollTicking) {
+            requestAnimationFrame(function () {
+                handleNavScroll();
+                updateActiveNav();
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
 
     /* ----------------------------------------
        SCROLL REVEAL (Intersection Observer)
@@ -362,9 +373,13 @@
                     }
                 })
                 .catch(function () {
-                    alert(
-                        'Oups! Une erreur est survenue. Envoyez-moi un email directement à jescygratton@hotmail.com'
-                    );
+                    if (formError) {
+                        formError.removeAttribute('hidden');
+                        formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        setTimeout(function () {
+                            formError.setAttribute('hidden', '');
+                        }, 10000);
+                    }
                 })
                 .finally(function () {
                     submitBtn.classList.remove('is-loading');
@@ -372,6 +387,22 @@
                 });
         });
     }
+
+    /* ----------------------------------------
+       EMAIL OBFUSCATION (anti-spam)
+       ---------------------------------------- */
+    document.querySelectorAll('.email-link').forEach(function (link) {
+        var user = link.getAttribute('data-user');
+        var domain = link.getAttribute('data-domain');
+        if (user && domain) {
+            var email = user + '@' + domain;
+            link.href = 'mailto:' + email;
+            var valueEl = link.querySelector('.email-value');
+            if (valueEl) {
+                valueEl.textContent = email;
+            }
+        }
+    });
 
     /* ----------------------------------------
        YEAR IN FOOTER (auto update)
