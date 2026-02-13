@@ -327,7 +327,6 @@
             // Validation simple
             var name = contactForm.querySelector('[name="name"]');
             var email = contactForm.querySelector('[name="email"]');
-            var message = contactForm.querySelector('[name="message"]');
 
             if (!name.value.trim() || !email.value.trim()) {
                 return;

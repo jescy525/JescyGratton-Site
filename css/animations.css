@@ -154,17 +154,6 @@
     transform: translateY(-6px);
 }
 
-/* Portfolio items */
-.portfolio-card {
-    transition: transform var(--transition-base),
-                box-shadow var(--transition-base),
-                border-color var(--transition-base);
-}
-
-.portfolio-card:hover {
-    transform: translateY(-4px);
-}
-
 /* Stat items */
 .stat-item {
     transition: transform var(--transition-base);
@@ -264,21 +253,7 @@
     left: 0;
 }
 
-/* Social icons */
-.social-link {
-    transition: color var(--transition-fast),
-                transform var(--transition-fast),
-                background var(--transition-fast);
-}
-
-.social-link:hover {
-    transform: translateY(-3px);
-}
-
-/* Footer social */
-.footer-social .social-link:hover {
-    transform: translateY(-3px) scale(1.1);
-}
+/* Footer social icons handled in style.css */
 
 
 /* ----------------------------------------
@@ -451,17 +426,7 @@
                 opacity var(--transition-fast);
 }
 
-.nav-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
+/* Hamburger animation handled in style.css (.nav-toggle.active .hamburger-line) */
 
 
 /* ----------------------------------------

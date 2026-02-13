@@ -342,14 +342,14 @@ button {
 
 .nav-cta {
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    color: #fff !important;
+    color: #fff;
     padding: 10px 20px;
     border-radius: var(--radius-md);
     font-weight: 600;
 }
 
 .nav-cta:hover {
-    color: #fff !important;
+    color: #fff;
     box-shadow: 0 4px 20px var(--accent-glow);
     transform: translateY(-1px);
 }
@@ -397,13 +397,6 @@ button {
     position: absolute;
     inset: 0;
     z-index: 0;
-}
-
-.hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.15;
 }
 
 .hero-overlay {
@@ -1120,6 +1113,8 @@ button {
     opacity: 0.4;
     cursor: pointer;
     transition: opacity 0.2s, background 0.2s;
+    border: none;
+    padding: 0;
 }
 
 .carousel-dot.active {
@@ -1877,18 +1872,6 @@ button {
     color: var(--text-muted);
 }
 
-/* ─────────────── SCROLL REVEAL ─────────────── */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.reveal--visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* ─────────────── HONEYPOT ─────────────── */
 .ohnohoney {
     position: absolute;
@@ -1912,17 +1895,4 @@ button {
     border: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    .reveal {
-        opacity: 1;
-        transform: none;
-    }
-}
+/* prefers-reduced-motion: handled in animations.css and responsive.css */

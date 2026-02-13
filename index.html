@@ -14,13 +14,15 @@
     <meta property="og:description" content="Contenu marketing IA ultra-efficace pour restos, comptables et e-com. Basé à Repentigny, je sers Montréal et alentours. Résultats garantis.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_CA">
-    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://www.jescygratton.com/">
+    <meta property="og:image" content="https://www.jescygratton.com/images/jescy-suit.jpg">
     <link rel="canonical" href="https://www.jescygratton.com/">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jescy Gratton | Expert Prompt IA">
     <meta name="twitter:description" content="Contenu marketing IA pour PME québécoises. Résultats garantis ou remboursé.">
+    <meta name="twitter:image" content="https://www.jescygratton.com/images/jescy-suit.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +43,8 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Jescy Gratton - Marketing Digital",
-      "description": "Spécialiste en marketing digital : réseaux sociaux, publicité en ligne, email marketing et stratégie de contenu.",
-      "url": "https://jescygratton.com",
+      "description": "Expert en prompt engineering IA à Repentigny. Contenu marketing ultra-efficace pour restos, comptables et e-commerces de Montréal et alentours.",
+      "url": "https://www.jescygratton.com",
       "email": "jescygratton@hotmail.com",
       "address": {
         "@type": "PostalAddress",
@@ -66,7 +68,7 @@
         top: -100%;
         left: 50%;
         transform: translateX(-50%);
-        background: var(--accent, #6366f1);
+        background: var(--accent, #0f969c);
         color: #fff;
         padding: 0.75rem 1.5rem;
         border-radius: 0 0 0.5rem 0.5rem;
@@ -154,7 +156,6 @@
                 </div>
 
                 <div class="hero-image reveal">
-                    <!-- Replace src with actual photo -->
                     <div class="hero-photo-wrapper">
                         <img src="images/jescy-suit.jpg" alt="Jescy Gratton - Expert Prompt IA" class="hero-photo" width="450" height="600" loading="eager">
                         <div class="hero-photo-glow"></div>
@@ -320,9 +321,9 @@
                                     <img src="images/resto-poutine-burger.jpg" alt="Burger gourmet et poutine artisanale" class="carousel-slide" width="400" height="500" loading="lazy">
                                 </div>
                                 <div class="carousel-dots">
-                                    <span class="carousel-dot active"></span>
-                                    <span class="carousel-dot"></span>
-                                    <span class="carousel-dot"></span>
+                                    <button class="carousel-dot active" aria-label="Image 1"></button>
+                                    <button class="carousel-dot" aria-label="Image 2"></button>
+                                    <button class="carousel-dot" aria-label="Image 3"></button>
                                 </div>
                                 <span class="carousel-counter">1/3</span>
                             </div>
@@ -359,9 +360,9 @@
                                     <img src="images/resto-brunch-interieur.jpg" alt="Intérieur restaurant brunch Laval" class="carousel-slide" width="400" height="500" loading="lazy">
                                 </div>
                                 <div class="carousel-dots">
-                                    <span class="carousel-dot active"></span>
-                                    <span class="carousel-dot"></span>
-                                    <span class="carousel-dot"></span>
+                                    <button class="carousel-dot active" aria-label="Image 1"></button>
+                                    <button class="carousel-dot" aria-label="Image 2"></button>
+                                    <button class="carousel-dot" aria-label="Image 3"></button>
                                 </div>
                                 <span class="carousel-counter">1/3</span>
                             </div>
@@ -398,9 +399,9 @@
                                     <img src="images/resto-cocktail-bar.jpg" alt="Bar craft cocktails artisanaux Québec" class="carousel-slide" width="400" height="500" loading="lazy">
                                 </div>
                                 <div class="carousel-dots">
-                                    <span class="carousel-dot active"></span>
-                                    <span class="carousel-dot"></span>
-                                    <span class="carousel-dot"></span>
+                                    <button class="carousel-dot active" aria-label="Image 1"></button>
+                                    <button class="carousel-dot" aria-label="Image 2"></button>
+                                    <button class="carousel-dot" aria-label="Image 3"></button>
                                 </div>
                                 <span class="carousel-counter">1/3</span>
                             </div>
@@ -532,7 +533,7 @@
                 <!-- Testimonials -->
                 <div class="testimonials reveal">
                     <h3 class="testimonials-title">Ce que disent mes clients</h3>
-                    <div class="testimonials-carousel" id="testimonialCarousel">
+                    <div class="testimonials-carousel" id="testimonialCarousel" aria-live="polite">
                         <div class="testimonial-card testimonial-card--active">
                             <div class="testimonial-stars" aria-label="5 étoiles sur 5">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -723,7 +724,7 @@
                             </div>
 
                             <input type="hidden" name="_subject" value="Nouveau lead - Site Jescy Gratton IA">
-                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                            <input type="text" name="_gotcha" class="ohnohoney" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                             <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
                                 <span class="btn-text">Envoyer ma demande</span>
@@ -846,6 +847,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js" async></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

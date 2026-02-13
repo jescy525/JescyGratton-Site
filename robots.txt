@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://jescygratton.com/sitemap.xml
+Sitemap: https://www.jescygratton.com/sitemap.xml
 
 # Protect form endpoint
 Disallow: /api/
