@@ -152,6 +152,17 @@
     font-size: 0.82rem;
 }
 
+/* Carousel mobile */
+.carousel-dot {
+    width: 5px;
+    height: 5px;
+}
+
+.carousel-counter {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+}
+
 /* Email mockup mobile */
 .email-mockup {
     margin: 16px 20px 20px;
@@ -406,6 +417,12 @@
 
     .social-post-caption {
         font-size: 0.85rem;
+    }
+
+    /* Carousel tablet reset */
+    .carousel-dot {
+        width: 6px;
+        height: 6px;
     }
 
     /* Showcase tablet */

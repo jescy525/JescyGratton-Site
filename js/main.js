@@ -285,6 +285,39 @@
     }
 
     /* ----------------------------------------
+       SOCIAL POST CAROUSELS (scroll-snap)
+       ---------------------------------------- */
+    document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+        var track = carousel.querySelector('.carousel-track');
+        var dots = carousel.querySelectorAll('.carousel-dot');
+        var counter = carousel.querySelector('.carousel-counter');
+        var slides = carousel.querySelectorAll('.carousel-slide');
+        var total = slides.length;
+
+        function updateCarousel() {
+            var scrollLeft = track.scrollLeft;
+            var slideWidth = track.offsetWidth;
+            var index = Math.round(scrollLeft / slideWidth);
+
+            dots.forEach(function (dot, i) {
+                dot.classList.toggle('active', i === index);
+            });
+
+            if (counter) {
+                counter.textContent = (index + 1) + '/' + total;
+            }
+        }
+
+        track.addEventListener('scroll', updateCarousel, { passive: true });
+
+        dots.forEach(function (dot, i) {
+            dot.addEventListener('click', function () {
+                track.scrollTo({ left: i * track.offsetWidth, behavior: 'smooth' });
+            });
+        });
+    });
+
+    /* ----------------------------------------
        CONTACT FORM (Formspree)
        ---------------------------------------- */
     if (contactForm) {
