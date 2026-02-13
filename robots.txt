@@ -1,0 +1,9 @@
+# robots.txt - Jescy Gratton Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jescygratton.com/sitemap.xml
+
+# Protect form endpoint
+Disallow: /api/

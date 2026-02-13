@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jescy Gratton | Expert Prompt IA pour PME Québécoises</title>
     <meta name="description" content="Expert en prompt engineering IA à Repentigny. J'aide les restos, comptables et e-com de Montréal, Laval et Longueuil à créer du contenu marketing ultra-efficace. Gagnez 20-30h/semaine.">
-    <meta name="keywords" content="prompt engineering Québec, contenu IA Montréal, marketing IA PME, prompt expert Repentigny, IA restaurant Québec, contenu marketing Laval, e-commerce IA Longueuil, Lanaudière marketing digital">
+    <meta name="keywords" content="prompt engineering Québec, contenu IA Montréal, marketing IA PME, prompt expert Repentigny, IA restaurant Québec, contenu marketing Laval, e-commerce IA Longueuil, Lanaudière marketing digital, IA cocktails Longueuil, brunch IA Laval, prompt immobilier Québec, contenu IA construction, marketing IA santé bien-être, email prospection avocat IA, SEO e-commerce Québec, comptable marketing IA, wellness contenu IA, réseaux sociaux IA PME">
     <meta name="author" content="Jescy Gratton">
     <meta name="robots" content="index, follow">
 
@@ -14,7 +14,8 @@
     <meta property="og:description" content="Contenu marketing IA ultra-efficace pour restos, comptables et e-com. Basé à Repentigny, je sers Montréal et alentours. Résultats garantis.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_CA">
-    <!-- <meta property="og:image" content="images/og-image.jpg"> -->
+    <meta property="og:image" content="images/og-image.jpg">
+    <link rel="canonical" href="https://www.jescygratton.com/">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -33,8 +34,56 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Jescy Gratton - Marketing Digital",
+      "description": "Spécialiste en marketing digital : réseaux sociaux, publicité en ligne, email marketing et stratégie de contenu.",
+      "url": "https://jescygratton.com",
+      "email": "jescygratton@hotmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Montréal",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/jescy-gratton",
+        "https://x.com/Ivarson_Uchiwa"
+      ],
+      "priceRange": "$$",
+      "serviceType": ["Marketing Digital", "Gestion Réseaux Sociaux", "Publicité en ligne", "Email Marketing"]
+    }
+    </script>
+
+    <!-- Skip-to-content CSS -->
+    <style>
+    .skip-to-content {
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent, #6366f1);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+        font-weight: 600;
+        z-index: 10000;
+        text-decoration: none;
+        transition: top 0.2s ease;
+    }
+    .skip-to-content:focus {
+        top: 0;
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Passer au contenu principal</a>
 
     <!-- ============================================ -->
     <!-- NAVIGATION                                    -->
@@ -62,7 +111,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
 
         <!-- ============================================ -->
         <!-- SECTION 1: HERO                              -->
@@ -70,8 +119,6 @@
         <section class="hero" id="hero">
             <div class="hero-bg">
                 <div class="hero-overlay"></div>
-                <!-- Replace src with actual photo -->
-                <img src="images/hero-bg.jpg" alt="" class="hero-bg-img" loading="eager">
             </div>
 
             <div class="hero-content">
@@ -799,6 +846,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" async></script>
 </body>
 </html>

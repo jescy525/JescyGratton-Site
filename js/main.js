@@ -329,7 +329,7 @@
             var email = contactForm.querySelector('[name="email"]');
             var message = contactForm.querySelector('[name="message"]');
 
-            if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+            if (!name.value.trim() || !email.value.trim()) {
                 return;
             }
 
@@ -364,7 +364,7 @@
                 })
                 .catch(function () {
                     alert(
-                        'Oups! Une erreur est survenue. Envoyez-moi un email directement à jesycgratton@gmail.com'
+                        'Oups! Une erreur est survenue. Envoyez-moi un email directement à jescygratton@hotmail.com'
                     );
                 })
                 .finally(function () {
