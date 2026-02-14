@@ -121,8 +121,9 @@
     /* ----------------------------------------
        SCROLL REVEAL (Intersection Observer)
        ---------------------------------------- */
+    var revealObserver = null;
     if ('IntersectionObserver' in window) {
-        var revealObserver = new IntersectionObserver(
+        revealObserver = new IntersectionObserver(
             function (entries) {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
@@ -240,7 +241,7 @@
 
     function startAutoPlay() {
         stopAutoPlay();
-        autoPlayInterval = setInterval(nextTestimonial, 5000);
+        autoPlayInterval = setInterval(nextTestimonial, 7000);
     }
 
     function stopAutoPlay() {
@@ -327,10 +328,19 @@
             // Validation simple
             var name = contactForm.querySelector('[name="name"]');
             var email = contactForm.querySelector('[name="email"]');
-            var message = contactForm.querySelector('[name="message"]');
 
             if (!name.value.trim() || !email.value.trim()) {
                 return;
+            }
+
+            // Email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+                email.setCustomValidity('Entrez un email valide');
+                email.reportValidity();
+                return;
+            } else {
+                email.setCustomValidity('');
             }
 
             // Loading state
@@ -395,6 +405,69 @@
 
     document.addEventListener('mousedown', function () {
         document.body.classList.remove('keyboard-nav');
+    });
+
+    /* ----------------------------------------
+       PORTFOLIO TABS FILTERING
+       ---------------------------------------- */
+    var portfolioTabs = document.querySelectorAll('.portfolio-tab');
+    var tabPanels = document.querySelectorAll('.portfolio-tab-panel');
+
+    function showTab(tabName) {
+        // Update tab buttons
+        portfolioTabs.forEach(function(tab) {
+            tab.classList.toggle('active', tab.getAttribute('data-tab') === tabName);
+        });
+
+        // Update panels
+        tabPanels.forEach(function(panel) {
+            if (panel.getAttribute('data-tab') === tabName) {
+                panel.style.display = '';
+                panel.removeAttribute('hidden');
+                // Re-observe reveals in this panel
+                var panelReveals = panel.querySelectorAll('.reveal:not(.reveal--visible)');
+                panelReveals.forEach(function(el) {
+                    if (typeof revealObserver !== 'undefined') {
+                        revealObserver.observe(el);
+                    } else {
+                        el.classList.add('reveal--visible');
+                    }
+                });
+            } else {
+                panel.style.display = 'none';
+            }
+        });
+    }
+
+    portfolioTabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var tabName = this.getAttribute('data-tab');
+            showTab(tabName);
+        });
+    });
+
+    // Show first tab by default
+    if (portfolioTabs.length > 0) {
+        var firstTab = portfolioTabs[0].getAttribute('data-tab');
+        showTab(firstTab);
+    }
+
+    /* ----------------------------------------
+       VARIATIONS TOGGLE
+       ---------------------------------------- */
+    document.querySelectorAll('.variations-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var panel = this.nextElementSibling;
+            var isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            this.setAttribute('aria-expanded', !isExpanded);
+
+            if (isExpanded) {
+                panel.setAttribute('hidden', '');
+            } else {
+                panel.removeAttribute('hidden');
+            }
+        });
     });
 
 })();

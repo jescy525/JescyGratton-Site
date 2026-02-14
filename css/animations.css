@@ -487,36 +487,27 @@
 
 
 /* ----------------------------------------
-   REDUCED MOTION - Override tout
+   REDUCED MOTION - Single source of truth
    ---------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
     .reveal {
         opacity: 1;
         transform: none;
-        transition: none;
     }
 
     .hero-text,
     .hero-image,
     .hero-badge {
-        animation: none;
         opacity: 1;
-    }
-
-    .hero-photo-glow {
-        animation: none;
-    }
-
-    .hero-scroll-indicator {
-        animation: none;
-    }
-
-    .dot--active {
-        animation: none;
-    }
-
-    .hero-title .gradient-text {
-        animation: none;
     }
 }
